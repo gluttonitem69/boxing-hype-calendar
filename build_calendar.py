@@ -31,18 +31,31 @@ def score_hype(client, event):
         n for b in broadcast for n in b.get("broadcasters", [])
     ) if broadcast else "unknown"
 
-    prompt = f"""Search the web to find out who is fighting in this boxing event
-and how much mainstream/public hype it has right now.
+    prompt = f"""Search the web to find out who is fighting in this boxing event.
+
+IMPORTANT: I am scoring MAINSTREAM WESTERN POP-CULTURE HYPE, not boxing skill,
+rankings, or regional fame. A fighter can be a top-ranked pound-for-pound
+world champion and still score LOW here if their fame is mostly confined to
+one country/region (e.g. a Japanese star famous mainly in Japan, or a
+domestic-only prospect) and they haven't crossed over into US/UK mainstream
+sports media or social media buzz.
+
+Score 1-10 using these anchors:
+- 9-10: Viral crossover spectacle known outside boxing entirely (influencer fighters
+  like Jake Paul/Andrew Tate/KSI, celebrity/actor crossover fighters, or a boxer so
+  famous they're a household name in the US/UK even to non-fans).
+- 6-8: Strong mainstream Western draw (ex-UFC/MMA star crossing over, major
+  US/UK title fight getting mainstream sports news coverage, big rivalry with
+  trash talk that trends on social media).
+- 3-5: Known and respected within the sport, may even be pound-for-pound elite,
+  but fame is regional/niche and doesn't reach casual Western sports fans or
+  general pop culture (e.g. huge in Japan/Mexico domestically but not in US/UK
+  mainstream coverage).
+- 1-2: Low-profile regional card, nobody involved is broadly recognizable.
 
 Event title: {title}
 Venue/Location: {venue}
 Broadcaster(s): {networks}
-
-Score the event 1-10 using these anchors:
-- 9-10: Global crossover spectacle (major influencer, legendary crossover star, undisputed title unification).
-- 6-8: Strong mainstream draw (famous ex-champion, MMA/UFC crossover star, actor/celebrity fighter, major title fight, big rivalry).
-- 3-5: Moderate interest (recognizable prospects, regional title, no major star power).
-- 1-2: Low-profile regional card with no widely-known names.
 
 After searching, respond with ONLY this JSON on the final line, nothing else after it:
 {{"score": <integer 1-10>, "reason": "<one short phrase>"}}"""
