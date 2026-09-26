@@ -30,35 +30,41 @@ def score_hype(client, event):
         n for b in broadcast for n in b.get("broadcasters", [])
     ) if broadcast else "unknown"
 
-    prompt = f"""You are a boxing/combat-sports insider rating mainstream public hype.
-Score this event from 1-10 using these calibration anchors:
-- 9-10: Global crossover spectacle (e.g. Jake Paul vs a boxing legend, Andrew Tate exhibition, undisputed title unification, Fury/Joshua-level PPV).
-- 6-8: Strong mainstream draw (famous ex-champion or UFC crossover star headlining, major title fight, well-known rivalry).
-- 3-5: Moderate interest (recognizable prospects, regional title, decent broadcaster but no major star power).
-- 1-2: Low-profile regional card with no widely-known names.
+    prompt = f"""Search the web to find out who is fighting in this boxing event
+and how much mainstream/public hype it has right now.
 
-Use your knowledge of the fighters' real-world fame, MMA/boxing crossover status,
-and influencer status when judging, not just the words in the title.
-
-Event: {title}
+Event title: {title}
 Venue/Location: {venue}
 Broadcaster(s): {networks}
 
-Respond ONLY with JSON: {{"score": <integer 1-10>, "reason": "<one short phrase>"}}"""
+Score the event 1-10 using these anchors:
+- 9-10: Global crossover spectacle (major influencer, legendary crossover star, undisputed title unification).
+- 6-8: Strong mainstream draw (famous ex-champion, MMA/UFC crossover star, actor/celebrity fighter, major title fight, big rivalry).
+- 3-5: Moderate interest (recognizable prospects, regional title, no major star power).
+- 1-2: Low-profile regional card with no widely-known names.
+
+After searching, respond with ONLY this JSON on the final line, nothing else after it:
+{{"score": <integer 1-10>, "reason": "<one short phrase>"}}"""
 
     response = client.models.generate_content(
         model="gemini-3.5-flash-lite",
         contents=prompt,
         config=types.GenerateContentConfig(
-            response_mime_type="application/json"
+            tools=[types.Tool(google_search=types.GoogleSearch())]
         )
     )
-    print("Gemini raw response for '" + title + "':", repr(response.text))
+    text = response.text.strip()
+    print("Gemini raw response for '" + title + "':", repr(text))
+
     try:
-        parsed = json.loads(response.text)
-        return int(parsed.get("score", 0)), parsed.get("reason", "")
-    except (ValueError, TypeError, json.JSONDecodeError):
-        return 0, "parse_error"
+        json_line = text.splitlines()[-1]
+        parsed = json.loads(json_line)
+        score = int(parsed.get("score", 0))
+        reason = parsed.get("reason", "")
+    except (ValueError, TypeError, json.JSONDecodeError, IndexError):
+        score, reason = 0, "parse_error"
+
+    return score, reason
 
 def build_ics(events):
     cal = Calendar()
