@@ -2,31 +2,39 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
+DESCRIPTION:Hype score: 7/10 - Strong mainstream draw with a major title rematch featuring a massive combat sports star in Japan\n\nBroadcast: DAZN\, DAZN Global\n\nMore info: https://www.google.com/search?q=Inoue+vs.+Tenshin+II:+Prime+Video+Boxing+16+boxing\n\nAccurate as of Sep 26\, 11:56 AM UTC
 DURATION:PT3H
 LOCATION:Tokyo\, Japan
 DTSTART:20260927T070000Z
 SUMMARY:Inoue vs. Tenshin II: Prime Video Boxing 16 (Hype: 7/10)
-UID:daae8519-aa9e-4c40-892c-572b03827e25@daae.org
+UID:09954f9e-20b3-4083-a480-9294bf942302@0995.org
+URL:https://www.google.com/search?q=Inoue+vs.+Tenshin+II:+Prime+Video+Boxing+16+boxing
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:Hype score: 5/10 - recognizable heavyweight prospect headlining regional card\n\nBroadcast: Sky Sports Main Event\, Paramount+\n\nMore info: https://www.google.com/search?q=Zuffa+Boxing+11:+Fisher+vs.+Pirotton+boxing\n\nAccurate as of Sep 26\, 11:56 AM UTC
 DURATION:PT3H
 LOCATION:Hackney Wick\, London
 DTSTART:20260926T160000Z
-SUMMARY:Zuffa Boxing 11: Fisher vs. Pirotton (Hype: 6/10)
-UID:125451cc-eaf7-4ff3-a091-07e6589fb5ee@1254.org
+SUMMARY:Zuffa Boxing 11: Fisher vs. Pirotton (Hype: 5/10)
+UID:f8b850cd-c173-4e1c-aa51-5bf5359722d8@f8b8.org
+URL:https://www.google.com/search?q=Zuffa+Boxing+11:+Fisher+vs.+Pirotton+boxing
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:Hype score: 5/10 - regional title card featuring notable prospects\n\nBroadcast: YouTube\n\nMore info: https://www.google.com/search?q=Fujinokuni+Professional+Boxing+9+boxing\n\nAccurate as of Sep 26\, 11:56 AM UTC
 DURATION:PT3H
 LOCATION:Fuji\, Shizuoka
 DTSTART:20260926T080000Z
 SUMMARY:Fujinokuni Professional Boxing 9 (Hype: 5/10)
-UID:14404b1b-647d-4f41-84fe-1edd9e35e08d@1440.org
+UID:462e78a5-e1a4-42ac-a71c-471fbe8ca9f4@462e.org
+URL:https://www.google.com/search?q=Fujinokuni+Professional+Boxing+9+boxing
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION:Hype score: 7/10 - Strong mainstream draw\n\nBroadcast: DAZN\, DAZN Global\n\nMore info: https://www.google.com/search?q=Cejudo+vs.+Walton+boxing\n\nAccurate as of Sep 26\, 11:56 AM UTC
 DURATION:PT3H
 LOCATION:Miami\, Florida
 DTSTART:20260926T230000Z
 SUMMARY:Cejudo vs. Walton (Hype: 7/10)
-UID:de680d6c-16b5-4908-bfa5-5f6dd3130b2a@de68.org
+UID:27334993-b2a4-4e7a-a244-234de3c561da@2733.org
+URL:https://www.google.com/search?q=Cejudo+vs.+Walton+boxing
 END:VEVENT
 END:VCALENDAR
