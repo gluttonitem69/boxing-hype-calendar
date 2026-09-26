@@ -19,6 +19,10 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
         run: python build_calendar.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-events-debug
+          path: raw_events.json
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

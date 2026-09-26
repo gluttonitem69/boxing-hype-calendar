@@ -13,10 +13,18 @@ def fetch_schedule():
         "x-rapidapi-host": "boxing-data-api.p.rapidapi.com"
     }
     resp = requests.get(url, headers=headers, params={"days": 7, "page_size": 25})
+    print("HTTP status:", resp.status_code)
     data = resp.json()
     with open("raw_events.json", "w") as f:
-        json.dump(data, f)
-    return data.get("data", [])
+        json.dump(data, f, indent=2)
+    events = data.get("data", [])
+    print("Number of events found:", len(events))
+    if events:
+        print("Sample event keys:", list(events[0].keys()))
+        print("Sample event:", events[0])
+    else:
+        print("Full response:", data)
+    return events
 
 def score_hype(client, event_title):
     prompt = f"""Rate this boxing event's mainstream hype on a scale of 1-10.
@@ -28,9 +36,10 @@ Event: {event_title}"""
         model="gemini-3.5-flash-lite",
         contents=prompt
     )
+    print("Gemini raw response for '" + str(event_title) + "':", repr(response.text))
     try:
         return int(response.text.strip())
-    except ValueError:
+    except (ValueError, TypeError):
         return 0
 
 def build_ics(events):
@@ -45,6 +54,7 @@ def build_ics(events):
     os.makedirs("docs", exist_ok=True)
     with open("docs/boxing.ics", "w") as f:
         f.writelines(cal)
+    print("Wrote", len(events), "events to docs/boxing.ics")
 
 def main():
     client = genai.Client(api_key=GEMINI_KEY)
@@ -55,8 +65,9 @@ def main():
         score = score_hype(client, title)
         e["hype_score"] = score
         scored.append(e)
-        print(f"{title}: {score}")
+        print(f"SCORED: {title}: {score}")
     filtered = [e for e in scored if e["hype_score"] >= HYPE_THRESHOLD]
+    print("Events above threshold:", len(filtered))
     build_ics(filtered)
 
 if __name__ == "__main__":
