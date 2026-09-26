@@ -1,4 +1,5 @@
 import os, json, requests
+from datetime import datetime, timezone
 from ics import Calendar, Event
 from google import genai
 from google.genai import types
@@ -68,13 +69,32 @@ After searching, respond with ONLY this JSON on the final line, nothing else aft
 
 def build_ics(events):
     cal = Calendar()
+    generated_at = datetime.now(timezone.utc).strftime("%b %d, %I:%M %p UTC")
     for e in events:
         ev = Event()
-        ev.name = f"{e.get('title','Boxing Event')} (Hype: {e['hype_score']}/10)"
+        title = e.get("title", "Boxing Event")
+        ev.name = f"{title} (Hype: {e['hype_score']}/10)"
         ev.begin = e.get("date")
         ev.duration = {"hours": 3}
         ev.location = e.get("location", "")
+
+        broadcast = e.get("broadcast", [])
+        networks = ", ".join(
+            n for b in broadcast for n in b.get("broadcasters", [])
+        ) if broadcast else "TBA"
+
+        search_query = title.replace(" ", "+")
+        search_link = f"https://www.google.com/search?q={search_query}+boxing"
+
+        ev.description = (
+            f"Hype score: {e['hype_score']}/10 - {e.get('hype_reason','')}\n\n"
+            f"Broadcast: {networks}\n\n"
+            f"More info: {search_link}\n\n"
+            f"Accurate as of {generated_at}"
+        )
+        ev.url = search_link
         cal.events.add(ev)
+
     os.makedirs("docs", exist_ok=True)
     with open("docs/boxing.ics", "w") as f:
         f.writelines(cal)
