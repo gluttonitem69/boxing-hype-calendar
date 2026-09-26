@@ -1,0 +1,27 @@
+name: Update Boxing Calendar
+on:
+  schedule:
+    - cron: "0 6 * * 2,5"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+        run: python build_calendar.py
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/boxing.ics
+          git commit -m "Update calendar" || echo "No changes"
+          git push
