@@ -2,12 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Hype score: 7/10 - Misfits crossover event featuring ex-UFC star Cejudo and actor-boxer Walton\n\nBroadcast: DAZN\, DAZN Global\n\nMore info: https://www.google.com/search?q=Cejudo+vs.+Walton+boxing\n\nAccurate as of Sep 26\, 12:05 PM UTC
+DESCRIPTION:Hype score: 5/10 - Known boxing prospect with viral social media highlights\, but mainstream Western pop-culture fame remains limited\n\nBroadcast: DAZN\, DAZN Global\n\nMore info: https://www.google.com/search?q=Whittaker+vs.+Wallace+boxing\n\nAccurate as of Sep 29\, 06:02 AM UTC
 DURATION:PT3H
-LOCATION:Miami\, Florida
-DTSTART:20260926T230000Z
-SUMMARY:Cejudo vs. Walton (Hype: 7/10)
-UID:019d27d2-3940-4fa4-b34c-de5686cb714d@019d.org
-URL:https://www.google.com/search?q=Cejudo+vs.+Walton+boxing
+LOCATION:Birmingham\, West Midlands\, England
+DTSTART:20261003T180000Z
+SUMMARY:Whittaker vs. Wallace (Hype: 5/10)
+UID:bd04ce09-3e78-4ce2-ba6f-a93af16838b9@bd04.org
+URL:https://www.google.com/search?q=Whittaker+vs.+Wallace+boxing
 END:VEVENT
 END:VCALENDAR
