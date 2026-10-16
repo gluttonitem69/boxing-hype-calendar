@@ -2,21 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Hype score: 5/10 - known titleholders within boxing but limited pop-culture crossover\n\nBroadcast: DAZN\, DAZN Global\n\nMore info: https://www.google.com/search?q=Fundora+vs.+Hadribeaj:+The+Fight+boxing\n\nAccurate as of Oct 13\, 06:05 AM UTC
-DURATION:PT3H
-LOCATION:Las Vegas\, Nevada
-DTSTART:20261017T210000Z
-SUMMARY:Fundora vs. Hadribeaj: The Fight (Hype: 5/10)
-UID:56a12656-a09f-4169-975b-d57c21b5eb45@56a1.org
-URL:https://www.google.com/search?q=Fundora+vs.+Hadribeaj:+The+Fight+boxing
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Hype score: 7/10 - Major UK heavyweight title rematch\n\nBroadcast: DAZN PPV\, DAZN PPV UK\n\nMore info: https://www.google.com/search?q=Dubois+vs.+Wardley+II:+Run+it+Back+boxing\n\nAccurate as of Oct 13\, 06:05 AM UTC
+DESCRIPTION:Hype score: 5/10 - Major UK heavyweight title rematch with strong domestic sports interest\, but limited mainstream US or global pop-culture crossover.\n\nBroadcast: DAZN PPV\, DAZN PPV UK\n\nMore info: https://www.google.com/search?q=Dubois+vs.+Wardley+II:+Run+it+Back+boxing\n\nAccurate as of Oct 16\, 06:15 AM UTC
 DURATION:PT3H
 LOCATION:Greenwich\, London
 DTSTART:20261017T150000Z
-SUMMARY:Dubois vs. Wardley II: Run it Back (Hype: 7/10)
-UID:5290d9e5-90ac-4a2e-8cee-485cc5af418a@5290.org
+SUMMARY:Dubois vs. Wardley II: Run it Back (Hype: 5/10)
+UID:705cfc88-41ce-45d6-bc2d-a938dc339ce5@705c.org
 URL:https://www.google.com/search?q=Dubois+vs.+Wardley+II:+Run+it+Back+boxing
 END:VEVENT
 END:VCALENDAR
