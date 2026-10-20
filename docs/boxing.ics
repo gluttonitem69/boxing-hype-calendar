@@ -1,13 +1,4 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
-BEGIN:VEVENT
-DESCRIPTION:Hype score: 5/10 - Major UK heavyweight title rematch with strong domestic sports interest\, but limited mainstream US or global pop-culture crossover.\n\nBroadcast: DAZN PPV\, DAZN PPV UK\n\nMore info: https://www.google.com/search?q=Dubois+vs.+Wardley+II:+Run+it+Back+boxing\n\nAccurate as of Oct 16\, 06:15 AM UTC
-DURATION:PT3H
-LOCATION:Greenwich\, London
-DTSTART:20261017T150000Z
-SUMMARY:Dubois vs. Wardley II: Run it Back (Hype: 5/10)
-UID:705cfc88-41ce-45d6-bc2d-a938dc339ce5@705c.org
-URL:https://www.google.com/search?q=Dubois+vs.+Wardley+II:+Run+it+Back+boxing
-END:VEVENT
 END:VCALENDAR
