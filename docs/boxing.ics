@@ -1,4 +1,13 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DESCRIPTION:Hype score: 9/10 - Canelo Alvarez household name\n\nBroadcast: DAZN PPV\, DAZN PPV UK\n\nMore info: https://www.google.com/search?q=Canelo+vs.+Mbilli:+Mexico+vs.+The+World+boxing\n\nAccurate as of Oct 27\, 06:21 AM UTC
+DURATION:PT3H
+LOCATION:Riyadh\, Saudi Arabia
+DTSTART:20261031T160000Z
+SUMMARY:Canelo vs. Mbilli: Mexico vs. The World (Hype: 9/10)
+UID:28e749ee-86e6-4786-b3da-30fa4f183c81@28e7.org
+URL:https://www.google.com/search?q=Canelo+vs.+Mbilli:+Mexico+vs.+The+World+boxing
+END:VEVENT
 END:VCALENDAR
