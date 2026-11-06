@@ -2,12 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Hype score: 5/10 - Known boxing names\, but niche mainstream hype\n\nBroadcast: Internet PPV\n\nMore info: https://www.google.com/search?q=Rumble+in+Miami+boxing\n\nAccurate as of Nov 03\, 01:06 PM UTC
+DESCRIPTION:Hype score: 5/10 - niche women's title fight\n\nBroadcast: ESPN\, Sky Sports Main Event\n\nMore info: https://www.google.com/search?q=MVPW+7:+Turhan+vs.+Baumgardner+boxing\n\nAccurate as of Nov 06\, 01:19 PM UTC
 DURATION:PT3H
-LOCATION:Miami\, Florida
-DTSTART:20261108T000000Z
-SUMMARY:Rumble in Miami (Hype: 5/10)
-UID:50b84b31-c61b-4289-a043-99474547f722@50b8.org
-URL:https://www.google.com/search?q=Rumble+in+Miami+boxing
+LOCATION:Arlington\, Texas
+DTSTART:20261108T221500Z
+SUMMARY:MVPW 7: Turhan vs. Baumgardner (Hype: 5/10)
+UID:a90adf90-47ee-4c4e-9395-ec9374954df8@a90a.org
+URL:https://www.google.com/search?q=MVPW+7:+Turhan+vs.+Baumgardner+boxing
 END:VEVENT
 END:VCALENDAR
